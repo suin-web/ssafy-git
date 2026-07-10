@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최수인 - 소개 및 관심사</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: 묵직하고 반듯한 느낌의 폰트 위주 -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // F1 공식 테마 컬러
+                        'f1-red': '#e10600',
+                        'f1-dark': '#15151e',
+                        'f1-light': '#f4f4f4',
+                        // 레드불 테마 컬러 (Favorites 섹션용)
+                        'rb-navy': '#001A30',
+                        'rb-blue': '#121F45',
+                        'rb-red': '#CC1E4A',
+                        'rb-yellow': '#FCD700',
+                    },
+                    fontFamily: {
+                        'sans': ['Noto Sans KR', 'sans-serif'],
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 스크롤바 */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #15151e; }
+        ::-webkit-scrollbar-thumb { background: #e10600; border-radius: 5px; }
+        
+        /* 스크롤 애니메이션 */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* F1 스타일 모서리 깎임 효과 클래스 */
+        .f1-corner { border-top-right-radius: 30px; border-bottom-left-radius: 10px; }
+        .f1-border-right { border-right: 8px solid #e10600; }
+        .f1-border-top { border-top: 8px solid #e10600; }
+
+        /* 카본 파이버 (레드불 섹션용 유지) */
+        .carbon-bg {
+            background: 
+                linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+                linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+                linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+                linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+                linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+                linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424 100%),
+                #131313;
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-f1-light overflow-x-hidden">
+
+    <!-- 네비게이션 바 (F1 공식 사이트 스타일: 블랙 배경, 상단 레드 라인) -->
+    <nav class="fixed w-full z-50 bg-f1-dark border-t-4 border-f1-red shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- 로고 영역 -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="w-8 h-8 bg-f1-red text-white flex items-center justify-center font-bold text-xl f1-corner">F1</div>
+                </div>
+                <!-- 메뉴 -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#home" class="text-white hover:text-f1-red px-3 py-2 text-sm font-bold uppercase transition-colors">Start</a>
+                        <a href="#about" class="text-white hover:text-f1-red px-3 py-2 text-sm font-bold uppercase transition-colors">About</a>
+                        <a href="#passion" class="text-white hover:text-f1-red px-3 py-2 text-sm font-bold uppercase transition-colors">Favorites</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero 섹션 (F1 드라이버 헤더 스타일) -->
+    <section id="home" class="relative pt-24 pb-16 min-h-screen flex items-center bg-white overflow-hidden border-b-8 border-f1-dark">
+        <!-- 배경 타이포그래피 장식 -->
+        <div class="absolute top-1/2 left-0 transform -translate-y-1/2 text-[15vw] font-black text-gray-100 opacity-50 font-montserrat select-none z-0">
+            DRIVER
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-12">
+            
+            <!-- 텍스트 영역 (좌측) -->
+            <div class="w-full md:w-1/2 text-left z-10 reveal active">
+                <div class="mb-4">
+                    <span class="inline-block bg-f1-red text-white font-montserrat font-bold text-sm tracking-widest px-4 py-2 uppercase f1-corner shadow-md">
+                        SSAFY 16기
+                    </span>
+                </div>
+                
+                <!-- 폰트 기울임 제거, 두껍고 단단한 느낌 -->
+                <h1 class="text-7xl md:text-9xl font-black text-f1-dark mb-10 tracking-tight drop-shadow-sm font-sans">
+                    최수인
+                </h1>
+                
+                <!-- 소개글 빈 공간 유지 -->
+                <div class="min-h-[60px]"></div>
+
+                <!-- 시작하기 버튼 (요청하신 타원형 복구, 기울임 없음) -->
+                <a href="#about" class="inline-flex items-center justify-center bg-f1-dark text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-f1-red hover:shadow-lg transition-all group">
+                    <i class="fa-solid fa-flag-checkered mr-3 text-xl"></i> 시작하기
+                </a>
+            </div>
+
+            <!-- 프로필 이미지 영역 (F1 공식 프로필 컷 스타일) -->
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end z-10 reveal active">
+                <div class="relative w-[320px] h-[400px] md:w-[450px] md:h-[550px] bg-gray-200 f1-corner f1-border-right f1-border-top shadow-2xl flex items-center justify-center overflow-hidden">
+                    
+                    <!-- 배경 패턴 -->
+                    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#15151e 1px, transparent 1px); background-size: 15px 15px;"></div>
+
+                    <!-- TODO: 본인 프로필 이미지 삽입 -->
+                    <!-- <img src="./본인사진.jpg" alt="최수인 프로필" class="absolute bottom-0 w-[90%] h-auto object-contain z-10"> -->
+                    
+                    <span class="text-gray-400 text-sm flex flex-col items-center z-10 font-bold">
+                        <i class="fa-solid fa-user text-6xl mb-4 text-f1-dark"></i>
+                        [본인 프로필 이미지 삽입]
+                    </span>
+
+                    <!-- 데코레이션 라인 -->
+                    <div class="absolute bottom-0 left-0 w-full h-3 bg-f1-dark z-20"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. About Me (F1 스탯/정보 카드 스타일) -->
+    <section id="about" class="py-24 bg-f1-light">
+        <div class="max-w-7xl mx-auto px-4">
+            
+            <!-- 섹션 타이틀 -->
+            <div class="mb-16 border-l-8 border-f1-red pl-6 reveal">
+                <h2 class="font-montserrat font-black text-5xl text-f1-dark uppercase tracking-tight">ABOUT ME</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- 카드 1: 기본 정보 -->
+                <div class="bg-white p-8 f1-corner shadow-lg reveal border border-gray-100 hover:shadow-xl transition-shadow relative overflow-hidden group">
+                    <!-- 호버 시 상단 레드 라인 -->
+                    <div class="absolute top-0 left-0 w-full h-2 bg-f1-red transform -translate-y-full group-hover:translate-y-0 transition-transform"></div>
+                    
+                    <div class="text-f1-red text-3xl mb-4"><i class="fa-solid fa-id-badge"></i></div>
+                    <p class="text-gray-400 font-montserrat text-sm font-bold tracking-widest mb-1">DRIVER INFO</p>
+                    <h3 class="text-2xl font-black text-f1-dark mb-6 border-b-2 border-gray-100 pb-4">기본 정보</h3>
+                    
+                    <ul class="space-y-4 text-f1-dark font-medium text-lg">
+                        <li class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm font-bold">이름</span>
+                            <span>최수인</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm font-bold">출생</span>
+                            <span>2003년생 (24세)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="text-gray-500 text-sm font-bold">MBTI</span>
+                            <span class="bg-f1-dark text-white px-3 py-1 rounded text-sm f1-corner">ISTP</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 카드 2: 교육 전공 -->
+                <div class="bg-white p-8 f1-corner shadow-lg reveal border border-gray-100 hover:shadow-xl transition-shadow relative overflow-hidden group" style="transition-delay: 100ms;">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-f1-red transform -translate-y-full group-hover:translate-y-0 transition-transform"></div>
+                    
+                    <div class="text-f1-red text-3xl mb-4"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <p class="text-gray-400 font-montserrat text-sm font-bold tracking-widest mb-1">CORE</p>
+                    <h3 class="text-2xl font-black text-f1-dark mb-6 border-b-2 border-gray-100 pb-4">교육 전공</h3>
+                    
+                    <ul class="space-y-6 text-f1-dark font-medium">
+                        <div>
+                            <span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">주전공</span>
+                            <li class="text-xl font-bold">사범대학 생물교육과</li>
+                        </div>
+                        <div>
+                            <span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">연계전공</span>
+                            <li class="text-xl font-bold">통합과학교육 전공</li>
+                        </div>
+                    </ul>
+                </div>
+
+                <!-- 카드 3: 공학 전공 -->
+                <div class="bg-white p-8 f1-corner shadow-lg reveal border border-gray-100 hover:shadow-xl transition-shadow relative overflow-hidden group" style="transition-delay: 200ms;">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-f1-red transform -translate-y-full group-hover:translate-y-0 transition-transform"></div>
+                    
+                    <div class="text-f1-red text-3xl mb-4"><i class="fa-solid fa-laptop-code"></i></div>
+                    <p class="text-gray-400 font-montserrat text-sm font-bold tracking-widest mb-1">UPGRADE</p>
+                    <h3 class="text-2xl font-black text-f1-dark mb-6 border-b-2 border-gray-100 pb-4">Tech Upgrade</h3>
+                    
+                    <div class="mt-4">
+                        <span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">복수전공</span>
+                        <div class="text-2xl font-black text-f1-dark">컴퓨터공학</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. My Passion (기존 유지: 레드불 카본 파이버 테마) -->
+    <section id="passion" class="py-24 carbon-bg text-white relative border-t-8 border-rb-red">
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <p class="text-rb-yellow font-bold tracking-widest mb-2 font-montserrat">MY FAVORITES</p>
+                <h2 class="font-montserrat font-black text-5xl md:text-6xl mb-6">
+                    FORMULA 1 <span class="text-rb-red">&</span> <br class="md:hidden">RED BULL RACING
+                </h2>
+            </div>
+
+            <!-- 2026 시즌 성적 대시보드 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 reveal">
+                <!-- 팀 성적 -->
+                <div class="bg-gray-800 border border-rb-yellow rounded-xl p-6 text-center shadow-[0_0_15px_rgba(252,215,0,0.15)] transform hover:-translate-y-2 transition-transform duration-300">
+                    <p class="text-gray-400 font-montserrat text-sm font-bold mb-3 tracking-widest">CONSTRUCTORS'</p>
+                    <div class="text-6xl font-black text-rb-yellow font-montserrat mb-2">
+                        4<span class="text-2xl text-white font-bold align-top">th</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Red Bull Racing</h3>
+                </div>
+
+                <!-- 드라이버 1 (베르스타펜) -->
+                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center border-t-4 border-t-rb-red transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 100ms;">
+                    <p class="text-gray-400 font-montserrat text-sm font-bold mb-3 tracking-widest">DRIVER</p>
+                    <div class="text-6xl font-black text-white font-montserrat mb-2 drop-shadow-md">
+                        7<span class="text-2xl text-gray-400 font-bold align-top">th</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Max Verstappen</h3>
+                    <span class="inline-block bg-rb-navy border border-rb-red text-white text-xs px-3 py-1 rounded-full font-bold">1st Driver</span>
+                </div>
+
+                <!-- 드라이버 2 (하자르) -->
+                <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center border-t-4 border-t-rb-blue transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 200ms;">
+                    <p class="text-gray-400 font-montserrat text-sm font-bold mb-3 tracking-widest">DRIVER</p>
+                    <div class="text-6xl font-black text-white font-montserrat mb-2 drop-shadow-md">
+                        8<span class="text-2xl text-gray-400 font-bold align-top">th</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Isack Hadjar</h3>
+                    <span class="inline-block bg-rb-navy border border-rb-blue text-white text-xs px-3 py-1 rounded-full font-bold">2nd Driver</span>
+                </div>
+            </div>
+
+            <!-- 이미지 갤러리 영역 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 갤러리 아이템 1 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-2xl reveal border border-gray-700 bg-gray-800 aspect-video md:aspect-[4/5] flex items-center justify-center">
+                    <img src="https://cdn.gpkorea.com/news/photo/202402/110444_236234_5511.jpg" alt="레드불 머신" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-rb-navy to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
+                        <h4 class="text-xl font-bold text-white">Red Bull Machine</h4>
+                    </div>
+                </div>
+
+                <!-- 갤러리 아이템 2 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-2xl reveal border-2 border-rb-yellow bg-gray-800 aspect-video md:aspect-[4/5] flex items-center justify-center md:-translate-y-4" style="transition-delay: 100ms;">
+                    <img src="https://thumbnews.nateimg.co.kr/view610///news.nateimg.co.kr/orgImg/sk/2025/12/08/2025052909552801795_1589422_121.jpg" alt="베르스타펜" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-rb-navy to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
+                        <h4 class="text-xl font-bold text-rb-yellow">Max Verstappen</h4>
+                    </div>
+                </div>
+
+                <!-- 갤러리 아이템 3 -->
+                <div class="group relative rounded-xl overflow-hidden shadow-2xl reveal border border-gray-700 bg-gray-800 aspect-video md:aspect-[4/5] flex items-center justify-center" style="transition-delay: 200ms;">
+                    <img src="https://preview.redd.it/a-straight-face-isack-hadjar-had-a-blank-expression-as-he-v0-u2ef54r45jng1.jpg?width=640&crop=smart&auto=webp&s=97a0be1211e38474aeba9ee173e8299ef7b6bb10" alt="아이작 하자르" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0">
+                    <div class="absolute inset-0 bg-gradient-to-t from-rb-navy to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
+                        <h4 class="text-xl font-bold text-white">Isack Hadjar</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="bg-f1-dark py-8 text-center text-gray-500 text-sm border-t-4 border-f1-red">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-montserrat font-bold text-white tracking-widest">PORTFOLIO</p>
+        </div>
+    </footer>
+
+    <!-- 자바스크립트 -->
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
