@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>최수인 - 소개 및 관심사</title>
     
-    <!-- 네이트 등 외부 이미지 차단 방지 (출처 숨기기) -->
+    <!-- 네이트 등 외부 이미지 링크 차단 방지 -->
     <meta name="referrer" content="no-referrer">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Montserrat:wght@500;700;900&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -30,11 +28,13 @@
                     fontFamily: {
                         'sans': ['Noto Sans KR', 'sans-serif'],
                         'montserrat': ['Montserrat', 'sans-serif'],
+                        'blackhan': ['Black Han Sans', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+    
     <style>
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #15151e; }
@@ -42,10 +42,7 @@
         
         .reveal { opacity: 0; transform: translateY(50px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-
         .f1-corner { border-top-right-radius: 30px; border-bottom-left-radius: 10px; }
-        .f1-border-right { border-right: 8px solid #e10600; }
-        .f1-border-top { border-top: 8px solid #e10600; }
 
         .carbon-bg {
             background: 
@@ -80,40 +77,81 @@
         </div>
     </nav>
 
-    <section id="home" class="relative pt-24 pb-16 min-h-screen flex items-center bg-white overflow-hidden border-b-8 border-f1-dark">
-        <div class="absolute top-1/2 left-0 transform -translate-y-1/2 text-[15vw] font-black text-gray-100 opacity-50 font-montserrat select-none z-0">
-            DRIVER
+    <section id="home" class="relative pt-24 pb-16 min-h-screen flex items-center bg-rb-navy overflow-hidden">
+        
+        <!-- 배경 장식 효과 -->
+        <div class="absolute inset-0 z-0 opacity-40 pointer-events-none">
+            <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[120%] bg-f1-red opacity-20 transform rotate-12 blur-[100px]"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[50%] bg-rb-yellow opacity-10 transform -rotate-12 blur-[80px]"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-4 relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-12">
             
-            <div class="w-full md:w-1/2 text-left z-10 reveal active">
-                <div class="mb-4">
-                    <span class="inline-block bg-f1-red text-white font-montserrat font-bold text-sm tracking-widest px-4 py-2 uppercase f1-corner shadow-md">
-                        SSAFY 16기
-                    </span>
+            <!-- 왼쪽: 타이틀 영역 (이름 정상 배치) -->
+            <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left z-10 reveal active">
+                <div class="inline-flex items-center gap-3 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-8 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+                    <span class="text-white font-montserrat font-bold text-sm tracking-widest">SSAFY 16기</span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-rb-yellow animate-pulse shadow-[0_0_8px_#FCD700]"></span>
                 </div>
                 
-                <h1 class="text-7xl md:text-9xl font-black text-f1-dark mb-10 tracking-tight drop-shadow-sm font-sans">
+                <h1 class="text-[100px] md:text-[140px] font-blackhan text-white leading-[1.1] mb-8 tracking-tight drop-shadow-2xl">
                     최수인
                 </h1>
                 
-                <div class="min-h-[60px]"></div>
-
-                <a href="#about" class="inline-flex items-center justify-center bg-f1-dark text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-f1-red hover:shadow-lg transition-all group">
-                    <i class="fa-solid fa-flag-checkered mr-3 text-xl"></i> 시작하기
+                <a href="#about" class="inline-flex items-center justify-center bg-transparent border-2 border-white text-white font-bold text-lg py-4 px-10 rounded-full hover:bg-white hover:text-rb-navy hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all duration-300 group mt-4">
+                    시작하기 <i class="fa-solid fa-arrow-right ml-3 text-xl group-hover:text-f1-red group-hover:translate-x-2 transition-all"></i>
                 </a>
             </div>
 
-            <div class="w-full md:w-1/2 flex justify-center md:justify-end z-10 reveal active">
-                <div class="relative w-[320px] h-[400px] md:w-[450px] md:h-[550px] bg-gray-200 f1-corner f1-border-right f1-border-top shadow-2xl flex items-center justify-center overflow-hidden">
+            <!-- 오른쪽: 미니 게임 & 대시보드 영역 -->
+            <div class="w-full md:w-1/2 flex flex-col xl:flex-row items-center xl:items-start justify-center md:justify-end gap-6 z-10 reveal active">
+                
+                <!-- 1. 아케이드 게임 화면 -->
+                <div class="relative bg-gray-900 border-4 border-gray-700 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.8)] flex flex-col items-center flex-shrink-0 w-[300px]">
+                    <div class="w-full bg-gray-800 flex justify-between items-center px-4 py-2 border-b-2 border-gray-700">
+                        <span class="text-rb-yellow font-blackhan tracking-widest text-sm">F1 DODGE RACING</span>
+                        <span class="text-gray-400 text-xs font-bold"><i class="fa-solid fa-keyboard mr-1"></i> ARROW KEYS</span>
+                    </div>
                     
-                    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#15151e 1px, transparent 1px); background-size: 15px 15px;"></div>
+                    <div class="relative w-full h-[400px]">
+                        <!-- 캔버스 -->
+                        <canvas id="f1GameCanvas" width="300" height="400" class="block w-full h-full bg-[#111]"></canvas>
+                        
+                        <!-- 게임 시작 화면 오버레이 -->
+                        <div id="gameStartScreen" class="absolute inset-0 bg-black/85 flex flex-col items-center justify-center z-10 transition-opacity">
+                            <i class="fa-solid fa-flag-checkered text-5xl text-white mb-6"></i>
+                            <button id="startGameBtn" class="bg-f1-red text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-f1-red transition-all shadow-[0_0_15px_rgba(225,6,0,0.5)] transform hover:scale-105">GAME START</button>
+                            <p class="text-gray-400 text-xs mt-6">좌우 터치 또는 ◀ ▶ 키로 조작</p>
+                        </div>
+                        
+                        <!-- 게임 오버 화면 오버레이 -->
+                        <div id="gameOverScreen" class="absolute inset-0 bg-black/90 flex flex-col items-center justify-center z-10 hidden">
+                            <h3 class="text-f1-red font-blackhan text-4xl mb-1 drop-shadow-md">CRASHED!</h3>
+                            <p id="finalScore" class="text-white font-blackhan text-2xl mb-8">SCORE: 0</p>
+                            <button id="restartGameBtn" class="bg-f1-light text-f1-dark font-bold py-2 px-8 rounded-full hover:bg-rb-yellow transition-colors mt-2">RETRY</button>
+                        </div>
+                    </div>
+                </div>
 
-                    <!-- 유저 프로필 사진 적용 완료 -->
-                    <img src="./image_19241b.png" alt="최수인 프로필" class="absolute inset-0 w-full h-full object-cover z-10">
+                <!-- 2. 순위 대시보드 (별도로 분리됨) -->
+                <div class="w-[300px] xl:w-[220px] bg-f1-dark border-2 border-gray-700 rounded-xl p-4 shadow-2xl flex flex-col">
+                    <h3 class="text-rb-yellow font-blackhan text-lg text-center border-b border-gray-700 pb-2 mb-3 tracking-wider">
+                        <i class="fa-solid fa-ranking-star mr-1"></i> HALL OF FAME
+                    </h3>
+                    
+                    <!-- 순위 리스트 -->
+                    <ul id="mainLeaderboard" class="space-y-3 text-sm font-montserrat flex-grow min-h-[100px]">
+                        <!-- JS를 통해 데이터가 들어감 -->
+                    </ul>
 
-                    <div class="absolute bottom-0 left-0 w-full h-3 bg-f1-dark z-20"></div>
+                    <!-- 신기록 달성 시 보여질 입력 폼 -->
+                    <div id="newRecordForm" class="hidden flex-col items-center mt-4 pt-4 border-t border-gray-700">
+                        <p class="text-f1-red font-bold text-xs mb-2 animate-pulse"><i class="fa-solid fa-trophy mr-1"></i> NEW HIGH SCORE!</p>
+                        <div class="flex w-full gap-2">
+                            <input type="text" id="playerName" maxlength="3" placeholder="AAA" class="w-full bg-gray-800 text-white font-bold text-center border border-gray-600 rounded p-1 uppercase focus:outline-none focus:border-rb-yellow">
+                            <button id="saveScoreBtn" class="bg-rb-yellow text-rb-navy font-bold px-3 py-1 rounded hover:bg-white transition-colors text-sm">SAVE</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,70 +159,46 @@
 
     <section id="about" class="py-24 bg-f1-light">
         <div class="max-w-7xl mx-auto px-4">
-            
             <div class="mb-16 border-l-8 border-f1-red pl-6 reveal">
                 <h2 class="font-montserrat font-black text-5xl text-f1-dark uppercase tracking-tight">ABOUT ME</h2>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
+                <!-- 기본 정보 -->
                 <div class="bg-white p-8 f1-corner shadow-lg reveal border border-gray-100 hover:shadow-xl transition-shadow relative overflow-hidden group">
                     <div class="absolute top-0 left-0 w-full h-2 bg-f1-red transform -translate-y-full group-hover:translate-y-0 transition-transform"></div>
-                    
                     <div class="text-f1-red text-3xl mb-4"><i class="fa-solid fa-id-badge"></i></div>
                     <p class="text-gray-400 font-montserrat text-sm font-bold tracking-widest mb-1">DRIVER INFO</p>
                     <h3 class="text-2xl font-black text-f1-dark mb-6 border-b-2 border-gray-100 pb-4">기본 정보</h3>
-                    
                     <ul class="space-y-4 text-f1-dark font-medium text-lg">
-                        <li class="flex justify-between items-center">
-                            <span class="text-gray-500 text-sm font-bold">이름</span>
-                            <span>최수인</span>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <span class="text-gray-500 text-sm font-bold">출생</span>
-                            <span>2003년생 (24세)</span>
-                        </li>
-                        <li class="flex justify-between items-center">
-                            <span class="text-gray-500 text-sm font-bold">MBTI</span>
-                            <span class="bg-f1-dark text-white px-3 py-1 rounded text-sm f1-corner">ISTP</span>
-                        </li>
+                        <li class="flex justify-between items-center"><span class="text-gray-500 text-sm font-bold">이름</span><span>최수인</span></li>
+                        <li class="flex justify-between items-center"><span class="text-gray-500 text-sm font-bold">출생</span><span>2003년생 (24세)</span></li>
+                        <li class="flex justify-between items-center"><span class="text-gray-500 text-sm font-bold">MBTI</span><span class="bg-f1-dark text-white px-3 py-1 rounded text-sm f1-corner">ISTP</span></li>
                     </ul>
                 </div>
 
+                <!-- 교육 전공 -->
                 <div class="bg-white p-8 f1-corner shadow-lg reveal border border-gray-100 hover:shadow-xl transition-shadow relative overflow-hidden group" style="transition-delay: 100ms;">
                     <div class="absolute top-0 left-0 w-full h-2 bg-f1-red transform -translate-y-full group-hover:translate-y-0 transition-transform"></div>
-                    
                     <div class="text-f1-red text-3xl mb-4"><i class="fa-solid fa-graduation-cap"></i></div>
                     <p class="text-gray-400 font-montserrat text-sm font-bold tracking-widest mb-1">CORE</p>
                     <h3 class="text-2xl font-black text-f1-dark mb-6 border-b-2 border-gray-100 pb-4">교육 전공</h3>
-                    
                     <ul class="space-y-6 text-f1-dark font-medium">
-                        <div>
-                            <span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">주전공</span>
-                            <li class="text-xl font-bold">사범대학 생물교육과</li>
-                        </div>
-                        <div>
-                            <span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">연계전공</span>
-                            <li class="text-xl font-bold">통합과학교육 전공</li>
-                        </div>
+                        <div><span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">주전공</span><li class="text-xl font-bold">사범대학 생물교육과</li></div>
+                        <div><span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">연계전공</span><li class="text-xl font-bold">통합과학교육 전공</li></div>
                     </ul>
                 </div>
 
+                <!-- 복수 전공 -->
                 <div class="bg-white p-8 f1-corner shadow-lg reveal border border-gray-100 hover:shadow-xl transition-shadow relative overflow-hidden group" style="transition-delay: 200ms;">
                     <div class="absolute top-0 left-0 w-full h-2 bg-f1-red transform -translate-y-full group-hover:translate-y-0 transition-transform"></div>
-                    
                     <div class="text-f1-red text-3xl mb-4"><i class="fa-solid fa-laptop-code"></i></div>
                     <p class="text-gray-400 font-montserrat text-sm font-bold tracking-widest mb-1">UPGRADE</p>
                     <h3 class="text-2xl font-black text-f1-dark mb-6 border-b-2 border-gray-100 pb-4">Tech Upgrade</h3>
-                    
-                    <div class="mt-4">
-                        <span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">복수전공</span>
-                        <div class="text-2xl font-black text-f1-dark">컴퓨터공학</div>
-                    </div>
+                    <div class="mt-4"><span class="text-f1-red text-xs font-bold uppercase tracking-wider block mb-1">복수전공</span><div class="text-2xl font-black text-f1-dark">컴퓨터공학</div></div>
                 </div>
             </div>
 
-            <!-- 🐾 반려동물 (PIT CREW) 섹션 추가 🐾 -->
             <div class="mt-16 border-t-4 border-f1-red pt-12 reveal">
                 <div class="mb-8 flex items-center justify-between">
                     <div>
@@ -195,13 +209,9 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    
-                    <!-- 갤러리 아이템 1 (로즈) -->
                     <div class="group relative rounded-xl overflow-hidden shadow-md reveal border border-gray-200 bg-white aspect-square flex items-center justify-center">
                         <img src="./rose.png" alt="첫째 로즈" class="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-110">
-                        <!-- 텍스트 배경 그라데이션 -->
                         <div class="absolute inset-0 bg-gradient-to-t from-f1-dark via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 z-20"></div>
-                        <!-- 설명 텍스트 -->
                         <div class="absolute bottom-0 left-0 w-full p-6 z-30 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
                             <span class="inline-block bg-f1-red text-white text-xs font-bold px-2 py-1 rounded mb-2">1st</span>
                             <h4 class="text-2xl font-black text-white mb-1">로즈 (Rose)</h4>
@@ -209,7 +219,6 @@
                         </div>
                     </div>
 
-                    <!-- 갤러리 아이템 2 (민트) -->
                     <div class="group relative rounded-xl overflow-hidden shadow-md reveal border border-gray-200 bg-white aspect-square flex items-center justify-center" style="transition-delay: 100ms;">
                         <img src="./mint.png" alt="둘째 민트" class="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-f1-dark via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 z-20"></div>
@@ -220,7 +229,6 @@
                         </div>
                     </div>
 
-                    <!-- 갤러리 아이템 3 (루이) -->
                     <div class="group relative rounded-xl overflow-hidden shadow-md reveal border border-gray-200 bg-white aspect-square flex items-center justify-center" style="transition-delay: 200ms;">
                         <img src="./louis.png" alt="셋째 루이" class="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-f1-dark via-transparent to-transparent opacity-0 group-hover:opacity-90 transition-opacity duration-300 z-20"></div>
@@ -230,11 +238,8 @@
                             <p class="text-gray-300 text-sm font-bold">고양이</p>
                         </div>
                     </div>
-
                 </div>
             </div>
-            <!-- 반려동물 섹션 끝 -->
-
         </div>
     </section>
 
@@ -250,33 +255,24 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 reveal">
                 <div class="bg-gray-800 border border-rb-yellow rounded-xl p-6 text-center shadow-[0_0_15px_rgba(252,215,0,0.15)] transform hover:-translate-y-2 transition-transform duration-300">
                     <p class="text-gray-400 font-montserrat text-sm font-bold mb-3 tracking-widest">CONSTRUCTORS'</p>
-                    <div class="text-6xl font-black text-rb-yellow font-montserrat mb-2">
-                        4<span class="text-2xl text-white font-bold align-top">th</span>
-                    </div>
+                    <div class="text-6xl font-black text-rb-yellow font-montserrat mb-2">4<span class="text-2xl text-white font-bold align-top">th</span></div>
                     <h3 class="text-xl font-bold text-white">Red Bull Racing</h3>
                 </div>
-
                 <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center border-t-4 border-t-rb-red transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 100ms;">
                     <p class="text-gray-400 font-montserrat text-sm font-bold mb-3 tracking-widest">DRIVER</p>
-                    <div class="text-6xl font-black text-white font-montserrat mb-2 drop-shadow-md">
-                        7<span class="text-2xl text-gray-400 font-bold align-top">th</span>
-                    </div>
+                    <div class="text-6xl font-black text-white font-montserrat mb-2 drop-shadow-md">7<span class="text-2xl text-gray-400 font-bold align-top">th</span></div>
                     <h3 class="text-xl font-bold text-white mb-2">Max Verstappen</h3>
                     <span class="inline-block bg-rb-navy border border-rb-red text-white text-xs px-3 py-1 rounded-full font-bold">1st Driver</span>
                 </div>
-
                 <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 text-center border-t-4 border-t-rb-blue transform hover:-translate-y-2 transition-transform duration-300" style="transition-delay: 200ms;">
                     <p class="text-gray-400 font-montserrat text-sm font-bold mb-3 tracking-widest">DRIVER</p>
-                    <div class="text-6xl font-black text-white font-montserrat mb-2 drop-shadow-md">
-                        8<span class="text-2xl text-gray-400 font-bold align-top">th</span>
-                    </div>
+                    <div class="text-6xl font-black text-white font-montserrat mb-2 drop-shadow-md">8<span class="text-2xl text-gray-400 font-bold align-top">th</span></div>
                     <h3 class="text-xl font-bold text-white mb-2">Isack Hadjar</h3>
                     <span class="inline-block bg-rb-navy border border-rb-blue text-white text-xs px-3 py-1 rounded-full font-bold">2nd Driver</span>
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- 인터넷 이미지 주소가 적용된 갤러리 -->
                 <div class="group relative rounded-xl overflow-hidden shadow-2xl reveal border border-gray-700 bg-gray-800 aspect-video md:aspect-[4/5] flex items-center justify-center">
                     <img src="https://cdn.gpkorea.com/news/photo/202402/110444_236234_5511.jpg" alt="Red Bull Machine" class="absolute inset-0 w-full h-full object-cover z-10 transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-rb-navy to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 z-20">
@@ -308,6 +304,7 @@
     </footer>
 
     <script>
+        // 1. 스크롤 애니메이션
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -322,14 +319,244 @@
         window.addEventListener("scroll", reveal);
         reveal();
 
+        // 2. 부드러운 네비게이션 이동
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        // 3. F1 미니 게임 & 분리된 리더보드 로직
+        const canvas = document.getElementById('f1GameCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            
+            // DOM Elements
+            const startScreen = document.getElementById('gameStartScreen');
+            const gameOverScreen = document.getElementById('gameOverScreen');
+            const startBtn = document.getElementById('startGameBtn');
+            const restartBtn = document.getElementById('restartGameBtn');
+            const finalScoreEl = document.getElementById('finalScore');
+            
+            // 외부 대시보드 Elements
+            const mainLeaderboard = document.getElementById('mainLeaderboard');
+            const newRecordForm = document.getElementById('newRecordForm');
+            const playerNameInput = document.getElementById('playerName');
+            const saveScoreBtn = document.getElementById('saveScoreBtn');
+
+            // 게임 상태 변수
+            let isPlaying = false;
+            let animationId;
+            let score = 0;
+            let frameCount = 0;
+            let roadOffset = 0;
+
+            const player = { x: 135, y: 320, width: 30, height: 50, speed: 6 };
+            let leftPressed = false;
+            let rightPressed = false;
+            let obstacles = [];
+
+            // --- 로컬 스토리지 랭킹 시스템 ---
+            function getTopScores() {
+                const scores = localStorage.getItem('f1DodgeTopScores');
+                return scores ? JSON.parse(scores) : [];
+            }
+
+            function renderLeaderboard() {
+                const scores = getTopScores();
+                let html = '';
+                if (scores.length === 0) {
+                    html = '<li class="text-gray-500 text-center text-xs mt-4">NO RECORDS YET</li>';
+                } else {
+                    scores.forEach((s, i) => {
+                        let colorClass = i === 0 ? 'text-rb-yellow font-bold text-base' : 'text-gray-300';
+                        let medal = i === 0 ? '🥇' : (i === 1 ? '🥈' : '🥉');
+                        html += `<li class="flex justify-between items-center px-4 py-2 bg-gray-800 rounded border border-gray-700 ${colorClass}">
+                                    <span>${medal} ${s.name}</span>
+                                    <span class="font-bold font-sans">${s.score}</span>
+                                 </li>`;
+                    });
+                }
+                if(mainLeaderboard) mainLeaderboard.innerHTML = html;
+            }
+
+            function saveNewRecord() {
+                const name = playerNameInput.value.trim().toUpperCase() || 'AAA';
+                const scores = getTopScores();
+                scores.push({ name: name, score: score });
+                
+                // 점수 내림차순 정렬 후 Top 3 유지
+                scores.sort((a, b) => b.score - a.score);
+                scores.splice(3);
+                
+                localStorage.setItem('f1DodgeTopScores', JSON.stringify(scores));
+                
+                // 폼 숨기고 리더보드 즉시 갱신
+                newRecordForm.classList.add('hidden');
+                newRecordForm.classList.remove('flex');
+                renderLeaderboard();
+            }
+
+            if(saveScoreBtn) {
+                saveScoreBtn.addEventListener('click', saveNewRecord);
+            }
+
+            // 웹페이지 접속 시 바로 리더보드 표시
+            renderLeaderboard();
+            
+            // --- 게임 조작 로직 ---
+            function resetGame() {
+                player.x = 135;
+                score = 0;
+                frameCount = 0;
+                obstacles = [];
+                isPlaying = true;
+                
+                startScreen.classList.add('hidden');
+                gameOverScreen.classList.add('hidden');
+                newRecordForm.classList.add('hidden');
+                newRecordForm.classList.remove('flex');
+                
+                gameLoop();
+            }
+
+            if(startBtn) startBtn.addEventListener('click', resetGame);
+            if(restartBtn) restartBtn.addEventListener('click', resetGame);
+
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'ArrowLeft') leftPressed = true;
+                if(e.key === 'ArrowRight') rightPressed = true;
+            });
+            document.addEventListener('keyup', (e) => {
+                if(e.key === 'ArrowLeft') leftPressed = false;
+                if(e.key === 'ArrowRight') rightPressed = false;
+            });
+            
+            // 모바일 터치 지원
+            canvas.addEventListener('touchstart', (e) => {
+                const touchX = e.touches[0].clientX - canvas.getBoundingClientRect().left;
+                if(touchX < canvas.width / 2) leftPressed = true;
+                else rightPressed = true;
+                e.preventDefault();
+            }, {passive: false});
+            
+            canvas.addEventListener('touchend', () => {
+                leftPressed = false;
+                rightPressed = false;
+            });
+
+            // --- 게임 드로잉 로직 ---
+            function drawPlayer() {
+                ctx.fillStyle = '#001A30'; 
+                ctx.fillRect(player.x, player.y, player.width, player.height);
+                ctx.fillStyle = '#FCD700'; 
+                ctx.fillRect(player.x + 10, player.y - 10, 10, 20);
+                ctx.fillStyle = '#CC1E4A'; 
+                ctx.fillRect(player.x - 5, player.y + 10, 40, 8); 
+                ctx.fillRect(player.x - 5, player.y + 45, 40, 8);
+            }
+
+            function updateObstacles() {
+                for(let i = 0; i < obstacles.length; i++) {
+                    let obs = obstacles[i];
+                    obs.y += obs.speed;
+
+                    // 충돌 검사
+                    if(player.x < obs.x + obs.width &&
+                       player.x + player.width > obs.x &&
+                       player.y < obs.y + obs.height &&
+                       player.y + player.height > obs.y) {
+                        gameOver();
+                    }
+
+                    if(obs.y > canvas.height) {
+                        obstacles.splice(i, 1);
+                        i--;
+                        score += 10;
+                    }
+                }
+
+                let spawnRate = Math.max(20, 60 - Math.floor(score / 50));
+                if(frameCount % spawnRate === 0) {
+                    let colors = ['#e10600', '#00a0d6', '#ffffff'];
+                    obstacles.push({
+                        x: Math.random() * (canvas.width - 30), 
+                        y: -50, 
+                        width: 30, height: 50,
+                        speed: 4 + (score / 100),
+                        color: colors[Math.floor(Math.random() * colors.length)]
+                    });
+                }
+            }
+
+            function drawRoad() {
+                ctx.fillStyle = '#111';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.strokeStyle = '#555';
+                ctx.lineWidth = 4;
+                ctx.setLineDash([20, 20]);
+                
+                roadOffset = (roadOffset + (4 + (score / 100))) % 40;
+                ctx.lineDashOffset = -roadOffset;
+
+                ctx.beginPath();
+                ctx.moveTo(canvas.width / 3, 0); ctx.lineTo(canvas.width / 3, canvas.height);
+                ctx.moveTo((canvas.width / 3) * 2, 0); ctx.lineTo((canvas.width / 3) * 2, canvas.height);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+
+            function gameOver() {
+                isPlaying = false;
+                cancelAnimationFrame(animationId);
+                
+                if(finalScoreEl) finalScoreEl.innerText = `SCORE: ${score}`;
+                
+                // 신기록 여부 체크
+                const topScores = getTopScores();
+                const isNewRecord = score > 0 && (topScores.length < 3 || score > (topScores[2]?.score || 0));
+                
+                if (isNewRecord) {
+                    // 게임 오버 시 대시보드 쪽에 폼 노출
+                    newRecordForm.classList.remove('hidden');
+                    newRecordForm.classList.add('flex');
+                    playerNameInput.value = ''; 
+                    playerNameInput.focus();
+                }
+
+                if(gameOverScreen) gameOverScreen.classList.remove('hidden');
+            }
+
+            function draw() {
+                drawRoad();
+                drawPlayer();
+                obstacles.forEach(obs => {
+                    ctx.fillStyle = obs.color;
+                    ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
+                });
+                
+                ctx.fillStyle = '#FCD700';
+                ctx.font = '24px "Black Han Sans"';
+                ctx.fillText(`SCORE: ${score}`, 10, 30);
+            }
+
+            function gameLoop() {
+                if(!isPlaying) return;
+                frameCount++;
+                
+                if(leftPressed && player.x > 0) player.x -= player.speed;
+                if(rightPressed && player.x < canvas.width - player.width) player.x += player.speed;
+                
+                updateObstacles();
+                draw();
+                animationId = requestAnimationFrame(gameLoop);
+            }
+            
+            drawRoad();
+            drawPlayer();
+        }
     </script>
 </body>
 </html>
